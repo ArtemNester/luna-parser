@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  luna-db:
+    container_name: luna-db
+    image: postgres:16.2-alpine
+    restart: always
+    shm_size: 256MB
+    environment:
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+      - PGDATA:/var/lib/postgresql/data/pgdata
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${DB_USER}" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+

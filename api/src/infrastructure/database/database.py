@@ -3,7 +3,7 @@ from sqlalchemy.orm import (
     declared_attr,
 )
 
-from api.src.types import T
+from src.types import T
 
 
 class Base(DeclarativeBase):

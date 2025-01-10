@@ -28,7 +28,7 @@ async def get_page_action() -> PageAction:
 
 async def get_action_service(
     page_action: PageAction = Depends(get_page_action),
-    visit_action: VisitPageAction = Depends(VisitPageAction),
+    visit_action: VisitPageAction = Depends(get_visit_action),
 ) -> ActionService:
     return ActionService(visit_action=visit_action, page_action=page_action)
 

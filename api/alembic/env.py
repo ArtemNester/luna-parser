@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import create_async_engine
 
 from alembic import context
 
-from src.infrastructure.database import Base
+from src import models
 from src.settings import settings
 
 
@@ -14,7 +14,9 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-target_metadata = Base.metadata
+models.load()
+
+target_metadata = models.Base.metadata
 
 
 def do_run_migrations(connection):

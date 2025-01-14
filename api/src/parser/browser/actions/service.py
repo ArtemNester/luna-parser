@@ -10,6 +10,8 @@ from src.parser.browser.actions import (
 
 @dataclass
 class ActionService:
+    """Facade actions implementation"""
+
     visit_action: VisitPageAction
     page_action: PageAction
 

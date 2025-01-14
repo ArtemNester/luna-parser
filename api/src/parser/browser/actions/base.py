@@ -4,6 +4,8 @@ from playwright.async_api import Page
 
 
 class BasePageAction(Protocol):
+    """Abstract interface PageAction"""
+
     async def click_button(self, page: Page, selector: str) -> None:
         raise NotImplementedError()
 
@@ -12,5 +14,7 @@ class BasePageAction(Protocol):
 
 
 class BaseVisitAction(Protocol):
+    """Abstract interface VisitAction"""
+
     async def visit(self, page: Page, domain: str) -> None:
         raise NotImplementedError()

@@ -12,7 +12,7 @@ from src.parser.browser.enums import BrowserType
 class BrowserFactory:
     @staticmethod
     def get_browser(playwright: Playwright, browser_type: str) -> PBType:
-        if BrowserType.CHROMIUM == browser_type:
+        if BrowserType.CHROMIUM == browser_type:  # Guard clauses style
             return playwright.chromium
         if BrowserType.FIREFOX == browser_type:
             return playwright.firefox

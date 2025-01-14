@@ -13,5 +13,6 @@ dependencies = [
     "psycopg2-binary>=2.9.10",
     "pydantic-settings>=2.7.1",
     "selenium>=4.27.1",
+    "sentry-sdk[fastapi]>=2.20.0",
     "sqlalchemy>=2.0.36",
 ]
